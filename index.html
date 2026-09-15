@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Ester Hasianna Nainggolan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="logo">Ester<span>.dev</span></div>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="#tentang">Tentang Saya</a></li>
+      <li><a href="#portofolio">Portofolio</a></li>
+      <li><a href="#layanan">Formulir Layanan</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <main>
+
+  <section id="tentang" class="section-tentang">
+    <h2>Tentang Saya</h2>
+    <div class="tentang-content">
+<img src="foto-profil.jpeg" alt="Foto Ester" class="foto-profil">     <div class="tentang-text">
+        <p>
+          Halo, saya <strong>Ester Hasianna Nainggolan</strong>, mahasiswa Sistem Informasi
+          di Institut Teknologi Del. Saya tertarik pada pengembangan web dan desain antarmuka
+          yang rapi serta aksesibel.
+        </p>
+        <ul class="info-list">
+          <li><strong>NIM:</strong> 12S24050</li>
+          <li><strong>Program Studi:</strong> Sistem Informasi</li>
+          <li><strong>Kampus:</strong> Institut Teknologi Del</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<section id="portofolio" class="section-portofolio">
+  <h2>Portofolio Karya</h2>
+
+  <div class="karya-grid">
+    <article class="karya-card">
+      <h3>TobaReport</h3>
+      <p>Web pelaporan warga & berita seputar wilayah Danau Toba, lengkap dengan peta laporan.</p>
+    </article>
+    <article class="karya-card">
+      <h3>Proyek Lainnya</h3>
+      <p>Deskripsi singkat proyek kedua kamu di sini.</p>
+    </article>
+  </div>
+
+  <h3>Riwayat Matakuliah</h3>
+  <table class="riwayat-table">
+    <caption>Daftar matakuliah yang relevan dengan pengembangan web</caption>
+    <thead>
+      <tr>
+        <th scope="col">Kode</th>
+        <th scope="col">Nama Matakuliah</th>
+        <th scope="col">Semester</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12S3101</td>
+        <td>Pemrograman & Pengujian Aplikasi Web</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>10S3001</td>
+        <td>Kecerdasan Buatan</td>
+        <td>5</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Data diperbarui tiap semester</td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+<section id="layanan" class="section-layanan">
+  <h2>Formulir Layanan</h2>
+  <form class="custom-form" action="#" method="POST">
+
+    <fieldset class="form-fieldset">
+      <legend>Data Identitas</legend>
+
+      <div class="form-group">
+        <label for="nama">Nama Lengkap <span class="req">*</span></label>
+        <input type="text" id="nama" name="nama" required placeholder="Nama kamu">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="email@contoh.com">
+      </div>
+
+      <div class="form-group">
+        <label for="telepon">Nomor Telepon</label>
+        <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-fieldset">
+      <legend>Detail Permintaan</legend>
+
+      <div class="form-group">
+        <label for="kategori">Topik Layanan</label>
+        <select id="kategori" name="kategori">
+          <option value="frontend">Frontend & UI/UX</option>
+          <option value="backend">Backend & Database</option>
+          <option value="konsultasi">Konsultasi Umum</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="jumlah">Estimasi Durasi (minggu)</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" max="12">
+      </div>
+
+      <div class="form-group">
+        <span>Preferensi Komunikasi:</span>
+        <label><input type="radio" name="komunikasi" value="chat" checked> Chat</label>
+        <label><input type="radio" name="komunikasi" value="call"> Video Call</label>
+      </div>
+
+      <div class="form-group">
+        <label><input type="checkbox" name="setuju" required> Saya setuju data ini digunakan untuk keperluan layanan</label>
+      </div>
+
+      <div class="form-group">
+        <label for="pesan">Pesan <span class="req">*</span></label>
+        <textarea id="pesan" name="pesan" rows="4" required placeholder="Tulis kebutuhan kamu di sini"></textarea>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn-submit">Kirim Permintaan</button>
+  </form>
+</section>
+   </main>
+
+  <aside>
+<h2>Info Tambahan</h2>
+<ul class="info-tambahan">
+  <li>Terbuka untuk kolaborasi proyek</li>
+  <li>Berbasis di Toba Samosir, Sumatera Utara</li>
+  <li>Respon formulir maksimal 1x24 jam</li>
+</ul>  
+</aside>
+
+  <footer>
+    <p>&copy; 2026 Ester Hasianna Nainggolan. Dibuat untuk tugas mandiri Pemrograman & Pengujian Aplikasi Web.</p>
+<nav class="footer-nav">
+  <a href="#tentang">Tentang Saya</a>
+  <a href="#portofolio">Portofolio</a>
+  <a href="#layanan">Formulir Layanan</a>
+</nav>
+  </footer>
+
+</body>
+</html>
