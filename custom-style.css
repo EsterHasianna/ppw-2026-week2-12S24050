@@ -1,0 +1,317 @@
+/* =====================================================
+   custom-style.css
+   Dimuat SETELAH Bootstrap 5.3 — semua aturan di sini
+   menimpa/melengkapi gaya bawaan Bootstrap secara alami
+   lewat urutan cascade, tanpa satupun !important.
+   ===================================================== */
+
+/* ===== 1. CSS Custom Properties — identitas visual personal ===== */
+:root {
+  --primary-brand: #2563eb;
+  --primary-hover: #1d4ed8;
+  --ink-dark: #0f172a;
+  --text-body: #475569;
+  --text-muted: #64748b;
+  --surface-bg: #ffffff;
+  --surface-alt: #f1f5f9;
+  --border-color: #e2e8f0;
+  --card-radius: 16px;
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-lift: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+  --danger: #ef4444;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-body);
+  background-color: #f8fafc;
+}
+
+h2, h3 { color: var(--ink-dark); }
+
+/* ===== 2. Navbar ===== */
+.custom-navbar {
+  background-color: var(--surface-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-navbar .navbar-brand {
+  color: var(--ink-dark);
+}
+
+.custom-navbar .brand-accent {
+  color: var(--primary-brand);
+}
+
+.custom-navbar .nav-link {
+  font-weight: 600;
+  color: var(--text-body);
+  transition: color 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--primary-brand);
+}
+
+/* ===== 3. Hero Section ===== */
+.hero-section {
+  background-color: var(--surface-alt);
+}
+
+.hero-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--primary-brand);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(28px, 4.5vw, 40px);
+  font-weight: 700;
+  color: var(--ink-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-lede {
+  color: var(--text-body);
+  max-width: 46ch;
+  margin-bottom: 24px;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-lift);
+  margin: 0 auto;
+}
+
+.btn-brand-solid {
+  background-color: var(--primary-brand);
+  border-color: var(--primary-brand);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-brand-solid:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-brand-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--border-color);
+  color: var(--ink-dark);
+  font-weight: 600;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-brand-outline:hover {
+  border-color: var(--primary-brand);
+  color: var(--primary-brand);
+}
+
+/* ===== 4. Info List (Tentang Saya) ===== */
+.info-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 16px;
+}
+
+.info-list li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ===== 5. Portofolio Cards ===== */
+.section-portofolio {
+  background-color: var(--surface-alt);
+}
+
+.project-card {
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background-color: var(--primary-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::before,
+.project-card:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.card-banner {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.banner-1 { background: linear-gradient(135deg, var(--ink-dark), var(--primary-brand)); }
+.banner-2 { background: linear-gradient(135deg, #0f766e, var(--primary-brand)); }
+.banner-3 { background: linear-gradient(135deg, #475569, #94a3b8); }
+.banner-4 { background: linear-gradient(135deg, #334155, #64748b); }
+
+.project-card .card-title {
+  color: var(--primary-brand);
+}
+
+.project-card .card-text {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.badge-tech {
+  background-color: var(--surface-alt);
+  color: var(--primary-brand);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  font-size: 11.5px;
+  margin-right: 6px;
+}
+
+/* ===== 6. Tabel Riwayat ===== */
+.riwayat-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.riwayat-table caption {
+  caption-side: top;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.riwayat-table thead {
+  background-color: var(--primary-brand);
+  color: #ffffff;
+}
+
+.riwayat-table tfoot {
+  font-size: 12px;
+  color: #94a3b8;
+  background-color: var(--surface-alt);
+}
+
+/* ===== 7. Formulir Layanan ===== */
+.custom-form {
+  background-color: var(--surface-bg);
+  padding: 28px;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.form-fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+
+.form-fieldset legend {
+  width: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-brand);
+  padding: 0 8px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-brand);
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.18);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-brand);
+  border-color: var(--primary-brand);
+}
+
+.form-check-input:focus {
+  border-color: var(--primary-brand);
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.18);
+}
+
+/* ===== 8. Aside & Footer ===== */
+.info-tambahan {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-tambahan li {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.info-tambahan li::before {
+  content: "•";
+  color: var(--primary-brand);
+  position: absolute;
+  left: 0;
+}
+
+.custom-footer {
+  background-color: var(--ink-dark);
+  color: #cbd5e1;
+  padding: 24px 0;
+  margin-top: 32px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.footer-nav a {
+  color: #94a3b8;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
+/* ===== 9. Responsif tambahan ===== */
+@media (max-width: 768px) {
+  .hero-photo {
+    max-width: 220px;
+  }
+}
