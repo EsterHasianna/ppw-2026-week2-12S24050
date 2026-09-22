@@ -14,7 +14,6 @@ Dibangun menggunakan HTML5 semantik dan CSS3 modern (Flexbox, responsive design)
 - Desain responsif (mobile-friendly)
 
 ## Live Demo
-(link GitHub Pages akan ditambahkan setelah deploy)
-
+https://esterhasianna.github.io/ppw-2026-week2-12S24050/
 ## Dibuat oleh
 Ester Hasianna Nainggolan — 12S24050
