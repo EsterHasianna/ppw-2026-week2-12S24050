@@ -204,83 +204,20 @@
     </div>
   </footer>
 
-  <!-- ===== Modal: TobaReport ===== -->
-  <div class="modal fade" id="modalTobaReport" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">TobaReport</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Web pelaporan warga dan berita seputar wilayah Danau Toba, lengkap dengan peta laporan interaktif untuk memudahkan warga melapor dan memantau isu di sekitar mereka.</p>
-          <span class="badge badge-tech">HTML5</span>
-          <span class="badge badge-tech">CSS3</span>
-          <span class="badge badge-tech">Peta Interaktif</span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-brand-solid" data-bs-dismiss="modal">Tutup</button>
+      <!-- Universal Dynamic Modal: 1 modal untuk seluruh proyek -->
+    <div class="modal fade" id="universalProjectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title fw-bold" id="projectModalTitle">Judul Proyek</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body p-4" id="projectModalBody">
+            <!-- Konten diinjeksi dinamis oleh app.js sesuai ID proyek yang diklik -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- ===== Modal: QRIS ===== -->
-  <div class="modal fade" id="modalQris" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">QRIS Jelajah Kuliner Indonesia</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Sistem pembayaran QRIS yang dirancang untuk membantu pelaku UMKM kuliner lokal menerima pembayaran digital dengan mudah.</p>
-          <span class="badge badge-tech">Bootstrap 5</span>
-          <span class="badge badge-tech">Kerja Tim</span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-brand-solid" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== Modal: Contoh 1 — ganti isinya ===== -->
-  <div class="modal fade" id="modalContoh1" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">[Ganti: Judul Proyek 3]</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>[Ganti: deskripsi lengkap proyek ketiga kamu.]</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-brand-solid" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== Modal: Contoh 2 — ganti isinya ===== -->
-  <div class="modal fade" id="modalContoh2" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">[Ganti: Judul Proyek 4]</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>[Ganti: deskripsi lengkap proyek keempat kamu.]</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-brand-solid" data-bs-dismiss="modal">Tutup</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Bootstrap 5.3 CDN (JS Bundle) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
