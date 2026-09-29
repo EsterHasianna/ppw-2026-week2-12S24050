@@ -1,0 +1,20 @@
+[
+  {
+    "id": "basic",
+    "name": "Paket Basic",
+    "price": 150000,
+    "features": ["Landing page 1 halaman", "Desain responsif", "1x revisi"]
+  },
+  {
+    "id": "standard",
+    "name": "Paket Standard",
+    "price": 350000,
+    "features": ["Website 3-5 halaman", "Desain responsif", "3x revisi", "Formulir kontak"]
+  },
+  {
+    "id": "premium",
+    "name": "Paket Premium",
+    "price": 750000,
+    "features": ["Website multi-halaman", "Desain UI kustom", "Revisi tanpa batas", "Deploy GitHub Pages"]
+  }
+]

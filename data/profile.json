@@ -1,0 +1,13 @@
+{
+  "name": "Ester Hasianna Nainggolan",
+  "nim": "12S24050",
+  "program": "Sistem Informasi",
+  "campus": "Institut Teknologi Del",
+  "tagline": "Membangun antarmuka web yang rapi & aksesibel",
+  "photo": "img/foto-profil.jpeg",
+  "stats": {
+    "projects": 4,
+    "technologies": 6,
+    "semesters": 5
+  }
+}

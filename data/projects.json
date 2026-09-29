@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "TobaReport",
+    "category": "Web",
+    "description": "TobaReport adalah proyek pelaporan berbasis web yang memudahkan pengguna menyampaikan dan memantau laporan. GANTI: tambahkan 1-2 kalimat tentang tujuan dan fitur utamanya.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "thumbnail": "img/proyek-1.jpg",
+    "metrics": { "durasi": "GANTI", "peran": "GANTI", "fitur": 5 },
+    "link": "https://github.com/EsterHasianna"
+  },
+  {
+    "id": 2,
+    "title": "Sistem Pelaporan Kerusakan Infrastruktur Kecamatan Tampahan",
+    "category": "Sistem Informasi",
+    "description": "Sistem informasi untuk membantu masyarakat melaporkan kerusakan infrastruktur di Kecamatan Tampahan, sehingga laporan dapat dicatat, dipantau, dan ditindaklanjuti dengan lebih terstruktur. GANTI: sesuaikan dengan fitur yang benar-benar kamu bangun.",
+    "tags": ["Sistem Informasi", "Web", "Basis Data"],
+    "thumbnail": "img/proyek-2.jpg",
+    "metrics": { "durasi": "GANTI", "peran": "GANTI", "fitur": 6 },
+    "link": "https://github.com/EsterHasianna"
+  },
+  {
+    "id": 3,
+    "title": "Sistem Informasi Loket PT Parisma Jaya Trans Balige",
+    "category": "Sistem Informasi",
+    "description": "Sistem informasi loket untuk PT Parisma Jaya Trans Balige yang membantu pengelolaan layanan di loket secara terkomputerisasi. GANTI: sesuaikan dengan fitur yang benar-benar kamu bangun (misalnya pemesanan tiket, data penumpang, laporan).",
+    "tags": ["Sistem Informasi", "Web", "Basis Data"],
+    "thumbnail": "img/proyek-3.jpg",
+    "metrics": { "durasi": "GANTI", "peran": "GANTI", "fitur": 6 },
+    "link": "https://github.com/EsterHasianna"
+  },
+  {
+    "id": 4,
+    "title": "Jejak Imun: Perancangan Aplikasi Jadwal Imunisasi Anak Indonesia",
+    "category": "Desain UI/UX",
+    "description": "Perancangan aplikasi Jejak Imun untuk membantu orang tua memantau jadwal imunisasi anak di Indonesia. GANTI: sesuaikan dengan fitur dan hasil rancanganmu.",
+    "tags": ["UI/UX", "Perancangan Aplikasi", "Mobile"],
+    "thumbnail": "img/proyek-4.jpg",
+    "metrics": { "durasi": "GANTI", "peran": "GANTI", "fitur": 4 },
+    "link": "https://github.com/EsterHasianna"
+  }
+]
