@@ -237,3 +237,94 @@ const App = {
 };
 
 document.addEventListener('DOMContentLoaded', () => App.init());
+
+// ===== TAHAP 6: Form layanan (Fetch POST), Toast, dan localStorage =====
+Object.assign(App, {
+  STORAGE_KEY: 'ester_service_orders',
+
+  initOrderForm() {
+    const form = document.getElementById('layananForm');
+    if (!form) return;
+    this.el.orderBadge = document.getElementById('orderBadge');
+    this.el.orderHistory = document.getElementById('orderHistory');
+    this.renderOrderBadge();
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // hentikan reload halaman
+      form.classList.add('was-validated');
+      if (!form.checkValidity()) return; // validasi HTML5 tetap berjalan
+
+      // Serialisasi form menjadi objek JSON (DTO)
+      const payload = Object.fromEntries(new FormData(form).entries());
+      payload.submittedAt = new Date().toISOString();
+
+      const btn = form.querySelector('[type="submit"]');
+      const originalHTML = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Mengirim...';
+
+      try {
+        await ApiService.submitServiceOrder(payload);
+        this.saveOrderToLocalStorage(payload);
+        this.showToast('Sukses!', 'Permintaan layanan berhasil diproses oleh API.', 'success');
+        form.reset();
+        form.classList.remove('was-validated');
+      } catch (err) {
+        this.showToast('Gagal', 'Permintaan gagal dikirim: ' + err.message, 'danger');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalHTML;
+      }
+    });
+  },
+
+  // ===== Toast Bootstrap =====
+  showToast(title, message, type = 'success') {
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
+    const el = document.createElement('div');
+    el.className = 'toast';
+    el.setAttribute('role', 'alert');
+    el.innerHTML = `
+      <div class="toast-header text-bg-${type}">
+        <strong class="me-auto">${this.escapeHTML(title)}</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+      <div class="toast-body">${this.escapeHTML(message)}</div>`;
+    container.appendChild(el);
+    el.addEventListener('hidden.bs.toast', () => el.remove());
+    new bootstrap.Toast(el, { delay: 4000 }).show();
+  },
+
+  // ===== Persistensi di sisi klien (localStorage) =====
+  getOrders() {
+    try {
+      return JSON.parse(localStorage.getItem(this.STORAGE_KEY)) || [];
+    } catch {
+      return [];
+    }
+  },
+
+  saveOrderToLocalStorage(order) {
+    const orders = this.getOrders();
+    orders.push({ localId: Date.now(), ...order });
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(orders));
+    this.renderOrderBadge();
+  },
+
+  renderOrderBadge() {
+    const orders = this.getOrders();
+    if (this.el.orderBadge) {
+      this.el.orderBadge.textContent = `Riwayat pesanan: ${orders.length}`;
+    }
+    if (this.el.orderHistory) {
+      this.el.orderHistory.innerHTML = orders
+        .slice(-3)
+        .reverse()
+        .map((o) => `<li class="small text-secondary">${this.escapeHTML(o.nama || 'Tanpa nama')} &middot; ${this.escapeHTML(new Date(o.submittedAt).toLocaleString('id-ID'))}</li>`)
+        .join('');
+    }
+  },
+});
+
+document.addEventListener('DOMContentLoaded', () => App.initOrderForm());
