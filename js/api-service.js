@@ -6,7 +6,7 @@
 const ApiService = {
   // Jeda buatan (ms) supaya Loading State terlihat saat belajar/demo.
   // Setelah selesai testing, ubah menjadi 0.
-  SIMULATED_DELAY: 800,
+  SIMULATED_DELAY: 0,
 
   // Endpoint tiruan untuk pengiriman form (mock REST API publik)
   ORDER_ENDPOINT: 'https://jsonplaceholder.typicode.com/posts',
